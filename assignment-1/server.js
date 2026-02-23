@@ -1,7 +1,10 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(cors());
 
 const students = [
   {
@@ -128,7 +131,7 @@ app.get('/students/:id', (req, res) => {
   if (detail) {
     res.status(200).json(detail);
   } else {
-    res.status(404).json(students);
+    res.status(404).json({ message: "Student not found" });
   }
 });
 
@@ -146,6 +149,6 @@ app.get('/students/branch/:branchname', (req, res) => {
   res.status(200).json(arr);
 })
 
-app.listen("3000", () => {
-  console.log("server is running on the port 3000");
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
