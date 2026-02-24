@@ -83,10 +83,15 @@ app.get('/', (req, res) => {
   res.send("Welcome to the Student Management API");
 })
 
+
+
 app.get('/students', (req, res) => {
 
   res.status(200).json(students);
 })
+
+
+
 
 app.get('/students/topper', (req, res) => {
   try {
@@ -99,9 +104,12 @@ app.get('/students/topper', (req, res) => {
     res.status(200).json(max);
   }
   catch (error) {
-    res.status(500).json("data fetchinf failed");
+    res.status(500).json({ error: "Failed to retrieve top student" });
   }
 })
+
+
+
 
 
 
@@ -117,11 +125,20 @@ app.get('/students/average', (req, res) => {
 })
 
 
+
+
+
 app.get('/students/count', (req, res) => {
   res.status(200).json({
     totalStudent: `${students.length}`
   })
 })
+
+
+
+
+
+
 
 app.get('/students/:id', (req, res) => {
   const data = String(req.params.id);
@@ -134,6 +151,8 @@ app.get('/students/:id', (req, res) => {
     res.status(404).json({ message: "Student not found" });
   }
 });
+
+
 
 
 app.get('/students/branch/:branchname', (req, res) => {

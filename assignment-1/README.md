@@ -77,11 +77,17 @@ https://node-assignments-x5z1.onrender.com
 Example Endpoints:
 
 https://node-assignments-x5z1.onrender.com/
+
 https://node-assignments-x5z1.onrender.com/students
+
 https://node-assignments-x5z1.onrender.com/students/topper
+
 https://node-assignments-x5z1.onrender.com/students/average
+
 https://node-assignments-x5z1.onrender.com/students/count
+
 https://node-assignments-x5z1.onrender.com/students/1
+
 https://node-assignments-x5z1.onrender.com/students/branch/CSE
 
 ---
